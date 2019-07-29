@@ -4,6 +4,18 @@ import axios from "axios";
 // Objects
 import { FETCH_START, FETCH_SUCCESS, FETCH_ERROR } from "./types";
 
+// Register a user
+//Server will create user and user id
+
+//Login
+
+// Send username and password
+// If valid, server will return a token
+// Set token to local storage
+
+// Fire off a fetch to the API, include token in header
+// If token is valid, API will return data, if invalid error
+
 export const fetchApi = () => dispatch => {
   dispatch({ type: FETCH_START });
   axios
