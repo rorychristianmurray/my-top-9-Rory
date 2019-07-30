@@ -183,7 +183,7 @@ export const rooterReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         loggingIn: false,
-        error: action.payload
+        error: payload
       };
     case CREATE_START:
       return {
