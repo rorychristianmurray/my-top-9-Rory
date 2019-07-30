@@ -4,7 +4,7 @@ function Category(props) {
   const boxes = props.topNine;
 
   return (
-    <div className="category-container">
+    <div className="category">
       <p>{props.categoryTitle}</p>
       <section className="top-nine-box">
         {boxes.map(box => (

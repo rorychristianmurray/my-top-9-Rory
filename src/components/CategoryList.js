@@ -7,7 +7,7 @@ function CategoryList() {
   const categories = initialState.data[0]["categories"];
 
   return (
-    <section className="category">
+    <section className="category-list">
       <div id="card-container">
         {categories.map(cate => (
           <Category
