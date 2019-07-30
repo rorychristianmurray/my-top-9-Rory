@@ -2,7 +2,17 @@
 import axios from "axios";
 
 // Objects
-import { FETCH_START, FETCH_SUCCESS, FETCH_ERROR } from "./types";
+import {
+  FETCH_START,
+  FETCH_SUCCESS,
+  FETCH_ERROR,
+  LOGIN_START,
+  LOGIN_SUCCESS,
+  LOGIN_ERROR,
+  CREATE_START,
+  CREATE_SUCCESS,
+  CREATE_ERROR
+} from "./types";
 
 // Register a user
 //Server will create user and user id
@@ -16,14 +26,14 @@ import { FETCH_START, FETCH_SUCCESS, FETCH_ERROR } from "./types";
 // Fire off a fetch to the API, include token in header
 // If token is valid, API will return data, if invalid error
 
-const token = JSON.parse(localStorage.getItem("token"));
+// const token = JSON.parse(localStorage.getItem("token"));
 
 export const fetchApi = () => dispatch => {
   dispatch({ type: FETCH_START });
   axios
     .get(`https://api-here.com/`, {
       headers: {
-        Authorization: token
+        // Authorization: token
       }
     })
     .then(response => {
