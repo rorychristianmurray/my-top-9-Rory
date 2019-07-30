@@ -16,10 +16,16 @@ import { FETCH_START, FETCH_SUCCESS, FETCH_ERROR } from "./types";
 // Fire off a fetch to the API, include token in header
 // If token is valid, API will return data, if invalid error
 
+const token = JSON.parse(localStorage.getItem("token"));
+
 export const fetchApi = () => dispatch => {
   dispatch({ type: FETCH_START });
   axios
-    .get(`https://api-here.com/`)
+    .get(`https://api-here.com/`, {
+      headers: {
+        Authorization: token
+      }
+    })
     .then(response => {
       console.log("GET response", response);
       dispatch({ type: FETCH_SUCCESS, payload: response.data });
