@@ -6,7 +6,7 @@ const Login = props => {
     password: ""
   });
 
-  return <div />;
+  return <div>Login incoming</div>;
 };
 
 export default Login;
