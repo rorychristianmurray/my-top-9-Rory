@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { login } from "../actions";
 
 const Login = props => {
   const [credentials, setCredentials] = useState({
@@ -25,7 +26,38 @@ const Login = props => {
     });
   };
 
-  return <div>Login incoming</div>;
+  return (
+    <div>
+      <div>Welcome to Top 9!</div>;
+      <div className="create-account-header">CREATE ACCOUNT</div>
+      <button>Create Account</button>
+      <form>
+        <input
+          type="text"
+          name="username"
+          placeholder="username"
+          value={credentials.username}
+          onChange={handleChanges}
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+          value={credentials.password}
+          onChange={handleChanges}
+        />
+        <button>Login</button>
+      </form>
+    </div>
+  );
 };
 
-export default Login;
+const mapStateToProps = state => ({
+  error: state.user.error,
+  fetching: state.user.fetching
+});
+
+export default connect(
+  mapStateToProps,
+  { login }
+)(Login);
