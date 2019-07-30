@@ -32,7 +32,6 @@ const DataList = props => {
             topNine={cate.topNine}
           />
         ))}{" "}
-        }
       </div>
     </section>
   );

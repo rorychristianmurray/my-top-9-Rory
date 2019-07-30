@@ -9,6 +9,7 @@ import Item from "./Item.js";
 
 const Data = props => {
   const boxes = props.topNine;
+  console.log(boxes, "boxes");
 
   return (
     <Card className="category">
