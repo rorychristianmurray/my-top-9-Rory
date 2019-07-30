@@ -36,6 +36,21 @@ export const fetchApi = () => dispatch => {
     });
 };
 
+export const login = creds => dispatch => {
+  dispatch({ type: LOGIN_START });
+  return axios
+    .post("https://api-here.com/", creds)
+    .then(response => {
+      console.log("login response", response);
+      localStorage.setItem("token", response.data.token);
+      dispatch({ type: LOGIN_SUCCESS, payload: response.data.token });
+    })
+    .catch(error => {
+      console.log("login error.response", error.response);
+      dispatch({ type: LOGIN_ERROR, payload: error.response.data.error });
+    });
+};
+
 export const createAccount = creds => dispatch => {
   console.log(creds);
   dispatch({ type: CREATE_START });
