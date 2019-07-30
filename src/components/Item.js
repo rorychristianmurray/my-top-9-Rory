@@ -1,9 +1,9 @@
 import React from "react";
 
-function Item() {
+function Item(props) {
   return (
     <div className="item-container">
-      <p>Item Name</p>
+      <p>{props.name}</p>
     </div>
   );
 }

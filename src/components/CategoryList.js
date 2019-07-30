@@ -8,29 +8,17 @@ function CategoryList() {
 
   return (
     <section className="category">
-      <div>
-        {categories.map(cate => {
-          console.log(cate, "cate");
-        })}
+      <div id="card-container">
+        {categories.map(cate => (
+          <Category
+            key={cate.id}
+            categoryTitle={cate.categoryTitle}
+            topNine={cate.topNine}
+          />
+        ))}
       </div>
     </section>
   );
 }
 
 export default CategoryList;
-
-/*
-
-  return (
-    <section className="category">
-      {categories.map(category => (
-        <Category
-          key={category.id}
-          categoryTitle={category.categoryTitle}
-          topNine={category.topNine}
-        />
-      ))}
-    </section>
-  );
-
-*/

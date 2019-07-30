@@ -2,6 +2,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Category from "./components/Category.js";
+import CategoryList from "./components/CategoryList.js";
 import { Provider } from "react-redux";
 
 // Objects
@@ -14,7 +15,7 @@ import "./index.css";
 const AppWithProvider = (
   <Provider store={store}>
     <App />
-    <Category />
+    <CategoryList />
   </Provider>
 );
 
