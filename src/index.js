@@ -2,8 +2,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-
-//import "semantic-ui-css/semantic.css";
+import { BrowserRouter as Router } from "react-router-dom";
 
 // Objects
 import App from "./App";
@@ -13,9 +12,11 @@ import { store } from "./store";
 import "./index.css";
 
 const AppWithProvider = (
-  <Provider store={store}>
-    <App />
-  </Provider>
+  <Router>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </Router>
 );
 
 ReactDOM.render(AppWithProvider, document.getElementById("root"));

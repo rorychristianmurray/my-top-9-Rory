@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Card, Form, Button } from "semantic-ui-react";
 
 function EditForm() {
-  const [name, setName] = useState("");
 
   function handleSubmit(event) {
     const newName = {

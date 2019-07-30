@@ -16,11 +16,11 @@ const Data = props => {
       <Card.Header>{props.categoryTitle}</Card.Header>
       <section className="top-nine-box">
         {boxes.map(box => (
-          <Item name={box.name} />
+          <Item passedSetName={box.passedSetName} name={box.name} />
         ))}
       </section>
     </Card>
-  );
+  ).className;
 };
 
 export default Data;

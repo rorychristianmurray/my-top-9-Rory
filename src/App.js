@@ -1,5 +1,5 @@
 // Dependencies
-import React from "react";
+import React, { useState } from "react";
 
 // Objects
 import DataList from "./components/DataList.js";
@@ -8,10 +8,17 @@ import EditForm from "./components/EditForm.js";
 import "./App.css";
 
 function App() {
+  const [name, setName] = useState("");
+  const [user, setUser] = useState([0]);
+
+  function passedSetName(value) {
+    setName(value);
+  }
+
   return (
     <div className="App">
       <h1>My Top Nine</h1>
-      <DataList />
+      <DataList user={user} passedSetName={passedSetName} />
     </div>
   );
 }

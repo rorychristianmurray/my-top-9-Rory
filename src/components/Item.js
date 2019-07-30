@@ -3,12 +3,12 @@ import EditForm from "./EditForm.js";
 import { Icon } from "semantic-ui-react";
 function Item(props) {
   const [isEditing, setIsEditing] = useState(false);
+  const passedSetName = props.passedSetName;
 
   function handleChange() {
     setIsEditing(!isEditing);
   }
 
-  if (isEditing) return <EditForm />;
   return (
     <div className="item">
       <Icon onClick={handleChange} name="edit" />
