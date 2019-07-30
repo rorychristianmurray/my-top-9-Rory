@@ -36,6 +36,12 @@ blue: #101B2D
   margin: 10px;
 }
 
+@media (min-width: 1000px) {
+  #card-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
 #card-container {
   width: 90%;
 }
