@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import { Card, Form, Button } from "semantic-ui-react";
 
 function EditForm() {
-
   function handleSubmit(event) {
-    const newName = {
-      name: name
-    };
-
     event.preventDefault();
   }
 
@@ -17,7 +12,7 @@ function EditForm() {
         <Form.Field>
           <label>My Favorite Thing</label>
           <input
-            onChange={event => setName(event.target.value)}
+            onChange={event => handleSubmit(event.target.value)}
             type="text"
             id="name"
             placeholder="Name"
