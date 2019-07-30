@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import EditForm from "./EditForm.js";
 import { Icon } from "semantic-ui-react";
 function Item(props) {
+  const [isEditing, setIsEditing] = useState(false);
+
+  function handleChange() {
+    setIsEditing(!isEditing);
+  }
+
+  if (isEditing) return <EditForm />;
   return (
     <div className="item">
-      <Icon name="edit" />
+      <Icon onClick={handleChange} name="edit" />
       <div>
         <p>{props.name}</p>
       </div>
@@ -12,12 +20,3 @@ function Item(props) {
 }
 
 export default Item;
-
-// const IconExampleBordered = () => (
-//   <div>
-//     <Icon bordered name='users' />
-//     <Icon bordered color='teal' name='users' />
-//     <Icon bordered inverted color='black' name='users' />
-//     <Icon bordered inverted color='teal' name='users' />
-//   </div>
-// )
