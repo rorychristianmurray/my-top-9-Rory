@@ -26,7 +26,7 @@ import {
 // Fire off a fetch to the API, include token in header
 // If token is valid, API will return data, if invalid error
 
-const token = JSON.parse(localStorage.getItem("token"));
+// const token = JSON.parse(localStorage.getItem("token"));
 
 export const createAccount = creds => dispatch => {
   console.log("createAccount creds", creds);
@@ -48,7 +48,7 @@ export const fetchApi = () => dispatch => {
   axios
     .get(`https://api-here.com/`, {
       headers: {
-        Authorization: JSON.parse(localStorage.getItem("token"))
+        Authorization: localStorage.getItem("token")
       }
     })
     .then(response => {
@@ -64,10 +64,11 @@ export const fetchApi = () => dispatch => {
 export const login = creds => dispatch => {
   dispatch({ type: LOGIN_START });
   return axios
-    .post("https://api-here.com/", creds)
+    .post("https://lifegpa-zach-christy.herokuapp.com/api/login", creds)
     .then(response => {
       console.log("login response", response);
       localStorage.setItem("token", response.data.token);
+      localStorage.setItem("userId", response.data.user.id);
       dispatch({ type: LOGIN_SUCCESS, payload: response.data.token });
     })
     .catch(error => {
