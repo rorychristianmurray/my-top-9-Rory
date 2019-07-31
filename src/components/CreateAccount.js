@@ -5,7 +5,9 @@ import { createAccount } from "../actions";
 const CreateAccount = props => {
   const [credentials, setCredentials] = useState({
     username: "",
-    password: ""
+    password: "",
+    fullname: "",
+    email: ""
   });
 
   const handleChanges = event => {
@@ -22,12 +24,13 @@ const CreateAccount = props => {
     props.createAccount(credentials);
     setCredentials({
       username: "",
-      password: ""
+      password: "",
+      fullname: ""
     });
   };
 
   return (
-    <div className="Login">
+    <div className="create-account">
       <h1>Get Top 9</h1>
       <form onSubmit={createAccount}>
         <input
@@ -35,6 +38,20 @@ const CreateAccount = props => {
           name="username"
           placeholder="username"
           value={credentials.username}
+          onChange={handleChanges}
+        />
+        <input
+          type="text"
+          name="fullname"
+          placeholder="fullname"
+          value={credentials.fullname}
+          onChange={handleChanges}
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="email"
+          value={credentials.email}
           onChange={handleChanges}
         />
         <input

@@ -16,7 +16,7 @@ function App() {
       <div className="App">
         <h1>My Top Nine</h1>
         {/* <Login /> */}
-        <Route path="/login" component={Login} />
+        <Route path="/" component={Login} />
         <Route path="/create" component={CreateAccount} />
         <DataList />
       </div>

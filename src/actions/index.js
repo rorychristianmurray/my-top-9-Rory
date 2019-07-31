@@ -32,10 +32,7 @@ export const createAccount = creds => dispatch => {
   console.log("createAccount creds", creds);
   dispatch({ type: CREATE_START });
   return axios
-    .post(
-      "https://cors-anywhere.herokuapp.com/https://top-9-backend.herokuapp.com/api/users/register",
-      creds
-    )
+    .post("https://lifegpa-zach-christy.herokuapp.com/api/register", creds)
     .then(response => {
       console.log("createAccount response", response);
       // localStorage.setItem("token", response.data.payload);
